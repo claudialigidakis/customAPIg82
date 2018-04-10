@@ -52,21 +52,21 @@ function find(id) {
 }
 
 
-// function change(name) {
-//   const errors = []
-//   const changingPuppy = puppies.find(puppies => puppies.id === id)
-//   console.log(changingPuppy, name)
-//   let newResponse
-//   if (changingPuppy) {
-//     changingPuppy.name = name
-//     newResponse = changingPuppy
-//   } else if(!changingPuppy) {
-//     errors.push('puppy not found')
-//     newResponse = {
-//       errors
-//     }
-//   }
-//   return newResponse
-// }
+function change(name) {
+  const errors = []
+  const changingPuppy = puppies.find(puppies => puppies.id === id)
+  console.log(changingPuppy, name)
+  let newResponse
+  if (changingPuppy) {
+    changingPuppy.name = name
+    newResponse = changingPuppy
+  } else if(!changingPuppy) {
+    errors.push('puppy not found')
+    newResponse = {
+      errors
+    }
+  }
+  return newResponse
+}
 
-module.exports = { getAll, create, find}
+module.exports = { getAll, create, find, change}
