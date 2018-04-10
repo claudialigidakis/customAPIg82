@@ -27,7 +27,7 @@ function find (req, res, next) {
 
 function change (req, res, next) {
   const name = model.create(req.body.name)
-
+console.log(name)
   if(result.errors) {
     return next({ status: 400, message: `Could not change the puppy`, errors: result.errors })
   }
