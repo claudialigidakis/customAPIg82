@@ -25,4 +25,13 @@ function find (req, res, next) {
   res.status(201).json({ data: result })
 }
 
-module.exports = { getAll, create, find }
+function change (req, res, next) {
+  const name = model.create(req.body.name)
+
+  if(result.errors) {
+    return next({ status: 400, message: `Could not change the puppy`, errors: result.errors })
+  }
+  res.status(201).json({ data: name })
+}
+
+module.exports = { getAll, create, find , change}
